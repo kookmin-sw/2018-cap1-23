@@ -6,7 +6,8 @@
 
 # 팀 소개
 
-**해보자 -**
+**해보자**
+
 이가영 : https://github.com/gy0216
 이승언 : https://github.com/lsebb1007
 
