@@ -8,7 +8,7 @@
 
 # 팀 소개
 
-![](https://photos.app.goo.gl/y2Kjx7Yi7YA6Q3B52)
+![](KakaoTalk_20180308_175835557.jpg)
 **팀페이지 주소** -> https://kookmin-sw.github.io/ `{{자신의 리파지토리 아이디}}`
 
 **예시)** 1조  https://kookmin-sw.github.io/2018-cap-1
