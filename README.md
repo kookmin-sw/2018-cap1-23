@@ -7,11 +7,11 @@
 # 소개 영상
 
 # 팀 소개
+**해보자** 이가영, 이승언
 
 <img src="KakaoTalk_20180308_175835557.jpg" width="150" height="200">
-**팀페이지 주소** -> https://kookmin-sw.github.io/ `{{자신의 리파지토리 아이디}}`
 
-**예시)** 1조  https://kookmin-sw.github.io/2018-cap-1
+**팀페이지 주소** 23조 -> https://github.com/kookmin-sw/2018-cap1-23/
 
 ## readme파일에 아래와 같은 내
 - readme.md 수정.
@@ -20,7 +20,7 @@
 
 - 수정후 팀페이지 확인하여 점검.
 
-**팀페이지 주소** -> https://kookmin-sw.github.io/ `{{자신의 리파지토리 아이디}}`
+**팀페이지 주소** -> https://github.com/kookmin-sw/2018-cap1-23/
 
 **예시)** 1조  https://kookmin-sw.github.io/2018-cap-1
 
