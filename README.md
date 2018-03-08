@@ -8,7 +8,12 @@
 
 # 팀 소개
 
+![](https://photos.app.goo.gl/y2Kjx7Yi7YA6Q3B52)
+**팀페이지 주소** -> https://kookmin-sw.github.io/ `{{자신의 리파지토리 아이디}}`
 
+**예시)** 1조  https://kookmin-sw.github.io/2018-cap-1
+
+## readme파일에 아래와 같은 내
 - readme.md 수정.
 
 - index.md 예시보고 수정.
@@ -29,10 +34,43 @@
 
 프로젝트 소개하는 영상을 추가하세요
 
+### 3
+**팀페이지 주소** -> https://kookmin-sw.github.io/ `{{자신의 리파지토리 아이디}}`
+
+**예시)** 1조  https://kookmin-sw.github.io/2018-cap-1
+
+## readme파일에 아래와 같은 내. 팀 소개
+
+![](용들을 추가하세요.
+
+### 1. 프로잭트 소개
+
+프로젝트
+
+### 2. 소개 영상
+
+프로젝트 소개하는 영상을 추가하세요
+
 ### 3. 팀 소개
 
-![](https://drive.google.com/file/d/15Sn0QtoljGCGTkg2Bf7MlgQhi5lwxvqP/view?usp=sharing)
+![](
+**팀페이지 주소** -> https://kookmin-sw.github.io/ `{{자신의 리파지토리 아이디}}`
 
+**예시)** 1조  https://kookmin-sw.github.io/2018-cap-1
+
+## readme파일에 아래와 같은 내용들을 추가하세요.
+
+### 1. 프로잭트 소개
+
+프로젝트
+
+### 2. 소개 영상
+
+프로젝트 소개하는 영상을 추가하세요
+
+### 3. 팀 소개
+
+![]()
 팀을 소개하세요.
 
 팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
