@@ -18,4 +18,6 @@
 
 We live in a lot of information. Too much information can be harmful to us. Newspaper articles are updated more than 100 times a day by newspapers. Now, finding and looking for what you want in a lot of information is also a competitive advantage. We will develop a web application that will show you what you want to see among news updates that are updated every day.
 
-# 소개 영상업로드 예정
+# 소개 영상
+
+업로드 예정
