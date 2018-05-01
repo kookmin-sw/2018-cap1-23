@@ -26,17 +26,28 @@ class Xsports(BaseCrawler):
 
 
     def _next(self):
-        if (len(self.bs.find('a', {'class': 'next'}))==0) :
-            return False
+        try:
+            if (len(self.bs.find('a', {'class': 'next'}))==0) :
+                return False
+            from_change = int(re.findall('\d+',self.next_url)[0])
+            to_change = from_change+1
+            next_url = self.next_url.replace(str(from_change),str(to_change))
+            new_url = self.url.replace(str(self.next_url), str(next_url))
+            print("next",next_url)
+            self.next_url = next_url
+            self.url = new_url
+            return True
+        
+        except:
+            from_change = int(re.findall('\d+',self.next_url)[0])
+            to_change = from_change+2
+            next_url = self.next_url.replace(str(from_change),str(to_change))
+            new_url = self.url.replace(str(self.next_url), str(next_url))
+            print("next",next_url)
+            self.next_url = next_url
+            self.url = new_url
+            return True
 
-        from_change = int(re.findall('\d+',self.next_url)[0])
-        to_change = from_change+1
-        next_url = self.next_url.replace(str(from_change),str(to_change))
-        new_url = self.url.replace(str(self.next_url), str(next_url))
-        print("next",next_url)
-        self.next_url = next_url
-        self.url = new_url
-        return True
 
     def _get_list(self):
         item_list = self.bs.find_all('div', {'class': 'thumb'})

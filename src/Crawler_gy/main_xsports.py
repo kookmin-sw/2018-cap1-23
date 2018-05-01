@@ -16,8 +16,8 @@ import time
 """
     variable
 """
-url = {'http://www.xportsnews.com/?ac=article_list&cate_indexno=178&page=1': 'jenter',
-       'http://www.xportsnews.com/?ac=article_list&cate_indexno=42&page=1': 'jsports'}
+url = {'http://www.xportsnews.com/?ac=article_list&cate_indexno=178&page=1': 'jenter'
+            'http://www.xportsnews.com/?ac=article_list&cate_indexno=42&page=1':'jsport'}
 
 base_url = 'http://www.xportsnews.com/'
 
@@ -38,11 +38,14 @@ def loop(crawler, key):
         crawler._sleep(sec = 4)
         crawler._init_cur_page()
 
-        for page in crawler._get_list():
-            
-            print(page)
+        lst_ = crawler._get_list()
+        num = len(lst_)
 
-            bodys= crawler._get_body(page)
+        for page in range(0,len(lst_)-2):
+            
+            print(lst_[page])
+
+            bodys= crawler._get_body(lst_[page])
 
             # print(bodys)
 
