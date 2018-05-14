@@ -1,27 +1,35 @@
 #-*- coding: utf-8 -*-
 from flask_restful import Resource,Api
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, redirect, url_for, request, render_template,send_file
 import json
 from flask_jsonpify import jsonify
 import gensim
 import sys
 import imp
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
 imp.reload(sys)
 
 app = Flask(__name__)
 
 @app.route('/success/<text>')
 def success_doc2vec(text):
-       model = gensim.models.Doc2Vec.load("/home/nlpserver/Desktop/Lee/model/doc2vec.model")
+      model = gensim.models.Doc2Vec.load("/home/nlpserver/Desktop/Lee/model/doc2vec.model")
 
-       result = model.most_similar(text.strip(),topn=10)
-       output = []
-       for i in range(len(result)):
-           output.append(result[i][0])
-       text = ""
-       for i in range(len(output)):
-           text += output[i] + ", "
-       return redirect(url_for("_html", result=text[:-2]))
+      result = model.most_similar(text.strip(),topn=10)
+      # wordcloud = WordCloud().generate(text)  #test 중 
+      # wordcloud.words_
+      # plt.figure(figsize=(5,5))
+      # plt.imshow(wordcloud, interpolation='bilinear')
+      # fig = plt.gcf()
+      # fig.savefig('/home/nlpserver/Desktop/Lee/2018-cap1-23/src/static/image/GG.png')
+      output = []
+      for i in range(len(result)):
+            output.append(result[i][0])
+      text = ""
+      for i in range(len(output)):
+            text += output[i] + ", "
+      return redirect(url_for("_html", result=text[:-2]))
 
 @app.route('/doc2vec', methods = ['POST','GET'])
 def get_text():

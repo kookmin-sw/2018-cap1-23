@@ -38,10 +38,7 @@ def loop(crawler):
     main function
 '''
 if __name__ == '__main__':
-	category = ['http://sports.hankooki.com/Article/ArticleList.php?section=baseball&subsection=all&page=1',
-	'http://sports.hankooki.com/Article/ArticleList.php?section=soccer&subsection=all&page=1',
-	'http://sports.hankooki.com/Article/ArticleList.php?section=sports&subsection=all&page=1',
-	'http://sports.hankooki.com/Article/ArticleList.php?section=entv&subsection=all&page=1']
+	category = ['http://sports.hankooki.com/Article/ArticleList.php?section=entv&subsection=all&page=1']
 	for i in category:
 		url = i
 		base_url = 'http://sports.hankooki.com'
