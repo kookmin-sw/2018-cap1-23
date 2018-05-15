@@ -17,12 +17,12 @@ def success_doc2vec(text):
       model = gensim.models.Doc2Vec.load("/home/nlpserver/Desktop/Lee/model/doc2vec.model")
 
       result = model.most_similar(text.strip(),topn=10)
-      # wordcloud = WordCloud().generate(text)  #test 중 
-      # wordcloud.words_
-      # plt.figure(figsize=(5,5))
-      # plt.imshow(wordcloud, interpolation='bilinear')
-      # fig = plt.gcf()
-      # fig.savefig('/home/nlpserver/Desktop/Lee/2018-cap1-23/src/static/image/GG.png')
+      wordcloud = WordCloud().generate(text)  #test 중 
+      wordcloud.words_
+      plt.figure(figsize=(5,5))
+      plt.imshow(wordcloud, interpolation='bilinear')
+      fig = plt.gcf()
+      fig.savefig('/home/nlpserver/Desktop/Lee/seungeon/2018-cap1-23/src/static/image/GG.png')
       output = []
       for i in range(len(result)):
             output.append(result[i][0])
