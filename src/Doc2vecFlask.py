@@ -47,7 +47,7 @@ def success_doc2vec(text):
       print(image_name)
       fig.savefig('/Users/seungeonlee/Desktop/capstone/2018-cap1-23/src/static/image/GG.png') 
 
-      return redirect(url_for("_html", result=text[:-2], image_name = image_name))
+      return redirect(url_for("_html", result=text, image_name = image_name))
 
 @app.route('/doc2vec', methods = ['POST','GET'])
 def get_text():
