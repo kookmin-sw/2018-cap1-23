@@ -1,16 +1,20 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<body bgcolor="#FFFFFF">
+
+<header>
+   </br>
+   <center><img src="{{url_for('static',filename='image/title.png/')}}" style="width:500px"></center>
+   </br>
+</header>
+<body background="{{url_for('static',filename='image/bg.png/')}}" style="background-repeat:repeat-x; background-size:300px">
    <center>
-   </br>
-   <!--<font size=6><center> Doc2Vec Demo </center></font>-->
-   </br>
    <ul>
-   <h2> 키워드를 입력하세요</h2>
+
    <form action = "http://0.0.0.0:5000/doc2vec" method = "post" accept-charset="utf-8">
-   <p><input type="text" size = 40  style="height:30px;" name= "get_text";/>
+   <p><br><br>사용자의 검색 키워드를 입력받아 연관 관계가 있는 키워드를 추천해주는 시스템입니다.<br><br><input type="text" size = 40  style="height:30px;" name= "get_text";/>
    <input type="submit" value="입력"/></p>
    </form>
+   <img src='/static/image/GG.png' style="object-fit:cover; width:600px; height:550px; display: block;">
 </br>
 
    <h4>Recommand Keyword</h4>
