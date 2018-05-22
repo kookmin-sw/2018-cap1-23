@@ -1,6 +1,5 @@
 #-*- coding: utf-8 -*-
 from flask_restful import Resource,Api
-from flask.ext.cache import Cache
 from flask import Flask, redirect, url_for, request, render_template,send_file
 import json
 from flask_jsonpify import jsonify
@@ -18,8 +17,8 @@ app.config["CACHE_TYPE"] = "null"
 
 @app.route('/success/<text>')
 def success_doc2vec(text):
-      cache = Cache()
-      model = gensim.models.Doc2Vec.load("/Users/seungeonlee/Desktop/capstone/2018-cap1-23/src/model/doc2vec.model")
+
+      model = gensim.models.Doc2Vec.load("/home/nlpserver/Desktop/Lee/model/doc2vec.model")
       result = model.most_similar(text.strip(),topn=10)
       result2 = model.most_similar(text.strip(),topn=20)
       output = []
@@ -35,7 +34,7 @@ def success_doc2vec(text):
       word.close()
       mylist = open('word.txt').read()
       
-      wordcloud = WordCloud(background_color='white',font_path ="/NEXON Football Gothic B.otf").generate(mylist)
+      wordcloud = WordCloud(background_color='white').generate(mylist)
       wordcloud.words_
       plt.figure(figsize=(5,5))
       plt.imshow(wordcloud, interpolation='bilinear')
@@ -45,7 +44,7 @@ def success_doc2vec(text):
       image_num = random.randrange(1,100)
       image_name = "/static/image/"+str(image_num)+".png"
       print(image_name)
-      fig.savefig('/Users/seungeonlee/Desktop/capstone/2018-cap1-23/src/static/image/GG.png') 
+      fig.savefig('/home/nlpserver/Desktop/Lee/test/2018-cap1-23/src/static/image/GG.png') 
 
       return redirect(url_for("_html", result=text))
 
