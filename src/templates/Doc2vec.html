@@ -1,25 +1,55 @@
-<!DOCTYPE html>
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <body bgcolor="#FFFFFF">
+   <center>
    </br>
-   <font size=6><center> Doc2Vec Demo </center></font>
+   <!--<font size=6><center> Doc2Vec Demo </center></font>-->
    </br>
-
+   <ul>
+   <h2> 키워드를 입력하세요</h2>
    <form action = "http://0.0.0.0:5000/doc2vec" method = "post" accept-charset="utf-8">
-   <center><p><input type="text" value="키워드를 입력하세요" size = 40 style="height:30px;" name= "get_text";/><input type="submit" value="입력"/></p><center>
+   <p><input type="text" size = 40  style="height:30px;" name= "get_text";/>
+   <input type="submit" value="입력"/></p>
    </form>
-   <div>
-      <p><a href="https://www.naver.com">결과</p>
-      <img src={{ url_for('static', filename='image/GG.png') }} width="800px" height="700px" style="display: block;">
-   </div>
+</br>
+
+   <h4>Recommand Keyword</h4>
+   </br>
+   {% set text = '' %}
+    <p> Xports-news &nbsp &nbsp
+   {% for i in result %}
+       {% if i != ' ' %}
+           {% set text = text + i %}
+       {% else %}
+           {% set url_link = 'http://www.xportsnews.com/?ac=article_search&skey=tc&sword=' %}
+           {% set url_link = url_link + text %}
+           {% set url_link = url_link + "&x=0&y=0" %}
+           <a href={{url_link}} style="text-decoration:none">{{ text }}</a> &nbsp &nbsp
+           {% set text = '' %}
+       {% endif %}
+   {% endfor %} </p>
 
 
-   <pre>Recommend Keyword</pre>
-   <center><pre>
-	{{ result }}
-   </pre><center>
+   {% set text = '' %}
+    <p> isplus-news &nbsp &nbsp
+   {% for i in result %}
+       {% if i != ' ' %}
+           {% set text = text + i %}
+       {% else %}
+           {% set url_link = 'http://isplus.live.joins.com/search/index.asp?kwd=+' %}
+           {% set url_link = url_link + text %}
+           {% set url_link = url_link + "&cloc=isplus%7Chome%7Cisplus_header_search" %}
+           <a href={{url_link}} style="text-decoration:none">{{ text }}</a> &nbsp &nbsp
+           {% set text = '' %}
+       {% endif %}
+   {% endfor %} </p>
 
+
+</ul>
+   <p>
+	{{_result}}
+   </p>
+</center>
 </body>
 </html>
 
