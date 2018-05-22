@@ -49,6 +49,7 @@ def success_doc2vec(text):
 
       return redirect(url_for("_html", result=text))
 
+
 @app.route('/doc2vec', methods = ['POST','GET'])
 def get_text():
        if request.method == 'POST':
