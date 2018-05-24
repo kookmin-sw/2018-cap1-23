@@ -1,0 +1,83 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); 
+
+body, div, ul, li{margin:0; padding:0}
+
+ul{list-style:none}
+    
+a{text-decoration:none}
+
+#logo1{
+    position:absolute;
+    width:400px;
+    margin-top:10px;
+    padding:0px;
+    display: inline-block;
+    font-size:40px;
+    font-weight:bold;
+    left:150px;
+    color:#333;
+     text-shadow: 0px 1px #aaaaaa, 1px 1px 0px #dad7d7;
+}
+
+#mainmenu{
+    margin:0px;
+ text-align:center;
+
+    height:750px;
+    width:100%;
+}
+
+#logo2{
+    display: inline-block;
+    font-size:20px;
+    font-weight:bold;
+    right:150px;
+    color:#333;
+}
+
+.intro{
+    padding-top:100px;
+}
+
+#introtext{
+    margin-top:20px;
+    margin-bottom:20px;
+    font-family: 'Nanum Gothic', sans-serif; 
+    color:#333;
+}
+
+#menu{
+    margin-left:580px;
+}
+
+.box{
+      width:200px; height:38px;
+	  position:relative;
+      display: inline-block;
+      margin-top:4px;
+      color:#333;
+      font-family: 'Nanum Gothic', sans-serif; 
+      text-align:center;
+      font-size:15px;
+      margin-top:30px;
+}
+
+.box a{
+    color:#333;
+}
+
+.box a:hover{
+    text-shadow: 0px 1px #333333, 1px 1px 0px #dad7d7;
+}
+
+#copy_right {
+    background-color:#eee;
+    text-align: rightr;
+    font-family:'NanumGothic';
+    font-size: 14px;
+    color:#666;
+    padding-left:120px;
+
+    height:50px;
+    padding-top:33px;
+}
