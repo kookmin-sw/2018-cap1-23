@@ -1,44 +1,70 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<header>
-   </br>
-   <center><img src="{{url_for('static',filename='image/title.png/')}}" style="width:500px"></center>
-   </br>
-</header>
-<body background="{{url_for('static',filename='image/bg.png/')}}" style="background-repeat:repeat-x; background-size:300px">
+<head>
+   <title> 뉴스 키워드 추천 - 해보자 </title>
+   <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css')}}">
+   </head>
+   <body>
    <center>
-   <ul>
 
-   <form action = "http://0.0.0.0:5000/doc2vec" method = "post" accept-charset="utf-8">
-   <p><br><br>사용자의 검색 키워드를 입력받아 연관 관계가 있는 키워드를 추천해주는 시스템입니다.<br><br><input type="text" size = 40  style="height:30px;" name= "get_text";/>
-   <input type="submit" value="입력"/></p>
-   </form>
-   <img src='/static/image/GG.png' style="object-fit:cover; width:600px; height:550px; display: block;">
-</br>
+   <div id = "logo1">CAPSTONE PROJECT</div>
 
-   <h4>Recommand Keyword</h4>
-   </br>
+    
+    <div id = "mainmenu">
+       <div id="menu">
+         <div class="box"><a href="{{ url_for('static',filename='image/archi.png') }}">Software Architecture > </a></div><div class="box"><a href="{{url_for('static',filename='image/skill.png')}}">사용된 기술 > </a></div>
+      </div>
+   <div class="intro">
+          <div id="logo2"><img src="{{ url_for('static',filename='image/phone2.png')}}"> &nbsp 뉴스 키워드 추천 <hr></div>
+      <div id="introtext"> 본 프로젝트는 매일 새롭게 업데이트되는</br>
+                너무 많은 뉴스 기사들 사이에서 사용자가 원하는</br>
+                정보를 편리하게 찾을 수 있도록 개발했습니다.</br></br>
+                연예 분야에서 사용자가 키워드 하나를 설정하면</br>
+                관련된 연관 단어들을 추천해주고,</br>
+                사용자가 그 중에서 알림을 받길 원하는 키워드를 </br>
+                선택합니다. 이후에 그 선택한 키워드가 포함되어있는</br>
+                뉴스의 목록을 보여주는 소프트웨어입니다.
+      </div>
+          </div>
+
+          <div id="input">
+        <form action = "http://0.0.0.0:5000/doc2vec" method = "post" accept-charset="utf-8">
+   <div><input type="text" size = 40  style="height:30px;" name= "get_text";/>
+   <input type="submit" value="입력"/></div></form>
+   </div>
+
+      </div>
+   <div id="wordcloud">
+      <img src="/static/image/GG.png" style="object-fit:cover; margin-top:50px; width:600px; height:250px; display: block;"></div>
   
+ <div class="news_list">
+ <div class="news_maintext"> Recommand Keyword <hr></div></br>
+ <div class="news_img"> <img src="{{url_for('static',filename='image/xports.PNG')}}"></div>
 
-    <p> Xports-news &nbsp &nbsp
   {%set result = result.split(' ')%}
   {% for i in result %}
-  
     {% set url_link = 'http://www.xportsnews.com/?ac=article_search&skey=tc&sword=' %}
     {% set url_link = url_link + i %}
     {% set url_link = url_link + '&x=0&y=0' %}
-    <a href={{url_link}} style="text-decoration:none">{{ i }}</a> &nbsp &nbsp
-  {% endfor %} </p>
+    <a href={{url_link}} style="text-decoration:none">{{ i[:-1] }}</a> &nbsp &nbsp
+  {% endfor %}
+<br>
+ <div class="news_img"> <img src="{{url_for('static',filename='image/iplus.PNG')}}"></div>
+    {% for i in result %}
+    {% set url_link = 'http://isplus.live.joins.com/search/?kwd=' %}
+    {% set url_link = url_link + i %}
+    <a href={{url_link}} style="text-decoration:none">{{ i[:-1] }}</a> &nbsp &nbsp
+  {% endfor %}
+<br><br><br>
+ </div>
 
-  {{ t }}
+<div>
 
-
-</ul>
-   
+        <div id="copy_right">이가영 이승언 | 윤성혜 교수님 | <a href="https://github.com/kookmin-sw/2018-cap1-23" style="text-decoration: underline">github</a>
+      </br>Copyright © 2018 by 해보자
+    </div>
 </center>
 </body>
 </html>
-
- 
 
