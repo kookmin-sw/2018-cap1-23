@@ -89,7 +89,28 @@ a{text-decoration:none}
 .news_img{
     display:inline-block;
 }
+
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: gray;
+}
+
+/* selected link */
+a:active {
+    color: gray;
+}
 /*
+
 .text{
     margin-top:250px;
 }
