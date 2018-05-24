@@ -1,0 +1,147 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); 
+
+body, div, ul, li{margin:0; padding:0}
+
+ul{list-style:none}
+    
+a{text-decoration:none}
+
+#logo1{
+    position:absolute;
+    width:400px;
+    margin-top:10px;
+    padding:0px;
+    display: inline-block;
+    font-size:40px;
+    font-weight:bold;
+    left:150px;
+    color:#fff;
+     text-shadow: 0px 1px #333333, 1px 1px 0px #dad7d7;
+}
+
+#mainmenu{
+    margin:0px;
+ text-align:center;
+
+    height:750px;
+    width:100%;
+    background-image: url('../image/main.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+#logo2{
+    display: inline-block;
+    font-size:20px;
+    font-weight:bold;
+    right:150px;
+    color:#fff;
+}
+
+.intro{
+    padding-top:100px;
+}
+
+#introtext{
+    margin-top:20px;
+    margin-bottom:20px;
+    font-family: 'Nanum Gothic', sans-serif; 
+    color:#fff;
+}
+
+#input{
+    margin-top:100px;
+}
+
+#menu{
+    margin-left:580px;
+    color:#fff;
+}
+
+.box{
+      width:200px; height:38px;
+	  position:relative;
+      display: inline-block;
+      margin-top:4px;
+      color:#fff;
+      font-family: 'Nanum Gothic', sans-serif; 
+      text-align:center;
+      font-size:15px;
+      margin-top:30px;
+}
+
+.box a{
+    color:#fff;
+}
+
+.box a:hover{
+    text-shadow: 0px 1px #333333, 1px 1px 0px #dad7d7;
+}
+.news_maintext{
+    display:inline-block;
+    font-size:18px;
+    font-weight:bold;
+    right:150px;
+    color:#333;
+    margin-top:30px;
+    }
+
+.news_img{
+    display:inline-block;
+}
+
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: gray;
+}
+
+/* selected link */
+a:active {
+    color: gray;
+}
+/*
+
+.text{
+    margin-top:250px;
+}
+
+#maintext{
+    font-weight:bold;
+    margin-top:20px;
+    margin-bottom:0px;
+    display: inline-block;
+    color:#fff;
+    font-family: 'Nanum Gothic', sans-serif; 
+    font-size:40px;
+    text-shadow: 0px 1px #333333, 1px 1px 0px #dad7d7;
+}
+
+#subtext{
+margin-top:10px;
+margin-bottom:40px;
+color:#fff;
+font-family: 'Nanum Gothic', sans-serif; 
+width:100%;
+font-size:20px;
+}
+*/
+
+#copy_right {
+    background-color:#eee;
+    font-family:'NanumGothic';
+    font-size: 14px;
+    color:#666;
+    height:50px;
+    padding-top:33px;
+}

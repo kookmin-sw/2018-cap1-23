@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	 	<meta charset="utf-8">
+		<title> Software Architecture </title>
+		 <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='css/archi.css') }}">
+	</head>
+	<body>
+		<center>
+
+    <div id = "logo1">CAPSTONE PROJECT</div>
+
+    
+    <div id = "mainmenu">
+       <div id="menu">
+         <div class="box"><a href="main"> Main > </a></div>
+	 <div class="box"><a href="architecture">Software Architecture > </a></div>
+      </div>
+
+          <div class="intro">
+          <div id="logo2"><img src="{{ url_for('static',filename='image/tec.png') }}"> Doc2Vec <hr></div>
+      <div id="introtext"> Doc2Vec은 Word Embedding 기법의 하나로 <br>
+       단어 간의 연관 관계를 분석해서 연관된 단어들끼리 <br>
+       군집이 되는 벡터를 만드는 방법이다. <br> 
+       즉, 뉴스 기사 본문과 같은 큰 텍스트 블록에 대하여 <br>
+       vector값으로 변환시키는 것으로 쉽게 word2vec의 확장된 버전이다. <br>
+      </div>
+          </div>
+
+          <img src="{{ url_for('static',filename='image/skill.png') }}"> <br><br><br><br><br>
+  </div>
+<br><br><br><br>
+ </center>
+      <div id>
+        <div id="copy_right">이가영 이승언 | 윤성혜 교수님 | <a href="{{ url_for('static',filename='https://github.com/kookmin-sw/2018-cap1-23') }}" style="text-decoration: underline">github</a>
+      </br>Copyright © 2018 by 해보자
+    </div>
+	</body>
+</html>
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	 	<meta charset="utf-8">
+		<title> Software Architecture </title>
+		 <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='css/archi.css') }}">
+	</head>
+	<body>
+		<center>
+
+    <div id = "logo1">CAPSTONE PROJECT</div>
+
+    
+    <div id = "mainmenu">
+       <div id="menu">
+         <div class="box"><a href="main"> Main > </a></div>
+	 <div class="box"><a href="tech">사용된 기술 > </a></div>
+      </div>
+
+          <div class="intro">
+          <div id="logo2"><img src="{{ url_for('static',filename='image/sa.png') }}"> Software architecture <hr></div>
+      <div id="introtext"> Beautiful Soup모듈을 이용하여 크롤러를 개발하고 <br>
+
+Train data를 구성하기위해 형태소 분석을 거쳐 명사추출을 한다. <br>
+
+Doc2vec 방식으로 연관 관계 분석을하여 <br>
+
+하나의 Vector model을 구축한다. <br>
+
+Flask를 사용한 웹을 통해 키워드 입력을 받고 <br>
+
+Vector model로 연관 키워드를 추출하여 <br>
+
+Wordcloud 로 시각화한 후 <br>
+
+해당 키워드 관련 기사를 목록화하여 보여준다. <br>
+
+      </div>
+          </div>
+
+          <img src="{{ url_for('static',filename='image/archi.png') }}"> <br><br><br><br><br>
+  </div>
+<br><br><br><br>
+ </center>
+      <div id>
+        <div id="copy_right">이가영 이승언 | 윤성혜 교수님 | <a href="{{ url_for('static',filename='https://github.com/kookmin-sw/2018-cap1-23') }}" style="text-decoration: underline">github</a>
+      </br>Copyright © 2018 by 해보자
+    </div>
+	</body>
+</html>
+

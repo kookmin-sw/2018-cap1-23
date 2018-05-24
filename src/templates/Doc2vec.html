@@ -1,57 +1,90 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<body bgcolor="#FFFFFF">
+
+<head>
+   <title> 뉴스 키워드 추천 - 해보자 </title>
+   <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css')}}">
+   </head>
+   <body>
    <center>
-   </br>
-   <!--<font size=6><center> Doc2Vec Demo </center></font>-->
-   </br>
-   <ul>
-   <h2> 키워드를 입력하세요</h2>
-   <form action = "http://0.0.0.0:5000/doc2vec" method = "post" accept-charset="utf-8">
-   <p><input type="text" size = 40  style="height:30px;" name= "get_text";/>
-   <input type="submit" value="입력"/></p>
-   </form>
-</br>
 
-   <h4>Recommand Keyword</h4>
-   </br>
-   {% set text = '' %}
-    <p> Xports-news &nbsp &nbsp
-   {% for i in result %}
-       {% if i != ' ' %}
-           {% set text = text + i %}
-       {% else %}
-           {% set url_link = 'http://www.xportsnews.com/?ac=article_search&skey=tc&sword=' %}
-           {% set url_link = url_link + text %}
-           {% set url_link = url_link + "&x=0&y=0" %}
-           <a href={{url_link}} style="text-decoration:none">{{ text }}</a> &nbsp &nbsp
-           {% set text = '' %}
-       {% endif %}
-   {% endfor %} </p>
+   <div id = "logo1">CAPSTONE PROJECT</div>
 
+    
+    <div id = "mainmenu">
+       <div id="menu">
+         <div class="box"><a href="architecture" style="color:#fff;">Software Architecture > </a></div><div class="box"><a href="tech" style="color:#fff;">사용된 기술 > </a></div>
+      </div>
+   <div class="intro">
+          <div id="logo2"><img src="{{ url_for('static',filename='image/phone2.png')}}"> &nbsp 뉴스 키워드 추천 <hr></div>
+      <div id="introtext"> 본 프로젝트는 매일 새롭게 업데이트되는</br>
+                너무 많은 뉴스 기사들 사이에서 사용자가 원하는</br>
+                정보를 편리하게 찾을 수 있도록 개발했습니다.</br></br>
+                연예 분야에서 사용자가 키워드 하나를 설정하면</br>
+                관련된 연관 단어들을 추천해주고,</br>
+                사용자가 그 중에서 알림을 받길 원하는 키워드를 </br>
+                선택합니다. 이후에 그 선택한 키워드가 포함되어있는</br>
+                뉴스의 목록을 보여주는 소프트웨어입니다.
+      </div>
+          </div>
 
-   {% set text = '' %}
-    <p> isplus-news &nbsp &nbsp
-   {% for i in result %}
-       {% if i != ' ' %}
-           {% set text = text + i %}
-       {% else %}
-           {% set url_link = 'http://isplus.live.joins.com/search/index.asp?kwd=+' %}
-           {% set url_link = url_link + text %}
-           {% set url_link = url_link + "&cloc=isplus%7Chome%7Cisplus_header_search" %}
-           <a href={{url_link}} style="text-decoration:none">{{ text }}</a> &nbsp &nbsp
-           {% set text = '' %}
-       {% endif %}
-   {% endfor %} </p>
+          <div id="input">
+        <form action = "http://0.0.0.0:5000/doc2vec" method = "post" accept-charset="utf-8">
+   <div><input type="text" size = 40  style="height:30px;" name= "get_text";/>
+   <input type="submit" value="입력"/></div></form>
+   </div>
 
+      </div>
+   <div id="wordcloud">
+      <img src="/static/image/GG.png" style="object-fit:cover; margin-top:50px; width:600px; height:250px; display: block;"></div>
+  
+ <div class="news_list">
+ <div class="news_maintext"> Recommand Keyword <hr></div></br>
+ <div class="news_img"> <img src="{{url_for('static',filename='image/xports.PNG')}}"></div>
 
-</ul>
-   <p>
-	{{_result}}
-   </p>
+  {%set result = result.split(' ')%}
+  {% for i in result %}
+    {% set url_link = 'http://www.xportsnews.com/?ac=article_search&skey=tc&sword=' %}
+    {% set url_link = url_link + i %}
+    {% set url_link = url_link + '&x=0&y=0' %}
+    <a href={{url_link}} style="text-decoration:none">{{ i }}</a> &nbsp &nbsp
+  {% endfor %}
+<br>
+ <div class="news_img"> <img src="{{url_for('static',filename='image/iplus.PNG')}}">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+    {% for i in result %}
+    {% set url_link = 'http://isplus.live.joins.com/search/?kwd=' %}
+    {% set url_link = url_link + i %}
+    <a href={{url_link}} style="text-decoration:none">{{ i }}</a> &nbsp &nbsp
+  {% endfor %}
+<br>
+
+ </div>
+  <div class="news_img"> <img src="{{url_for('static',filename='image/sportsworld.png')}}" style="width:180px">&nbsp&nbsp&nbsp</div>
+
+    {% for i in result %}
+    {% set url_link = 'http://search.sportsworldi.com/?searchWord=' %}
+    {% set url_link = url_link + i %}
+    <a href={{url_link}} style="text-decoration:none; margin-top: 10px;">{{ i }}</a> &nbsp &nbsp
+  {% endfor %}
+<br>
+
+  <div class="news_img"> <img src="{{url_for('static',filename='image/sportss.png')}}" style="width:180px">&nbsp&nbsp&nbsp</div>
+
+    {% for i in result %}
+    {% set url_link = 'http://www.sportsseoul.com/search?search_txt=' %}
+    {% set url_link = url_link + i %}
+    <a href={{url_link}} style="text-decoration:none">{{ i }}</a> &nbsp &nbsp
+  {% endfor %}
+
+<br><br><br>
+ </div>
+
+<div>
+
+        <div id="copy_right">이가영 이승언 | 윤성혜 교수님 | <a href="https://github.com/kookmin-sw/2018-cap1-23" style="text-decoration: underline">github</a>
+      </br>Copyright © 2018 by 해보자
+    </div>
 </center>
 </body>
 </html>
-
- 
 
