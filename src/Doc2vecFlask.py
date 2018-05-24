@@ -18,7 +18,7 @@ app.config["CACHE_TYPE"] = "null"
 @app.route('/success/<text>')
 def success_doc2vec(text):
 
-      model = gensim.models.Doc2Vec.load("/Users/seungeonlee/Desktop/model/doc2vec.model")
+      model = gensim.models.Doc2Vec.load("/home/nlpserver/Desktop/Test/model_10epoch/doc2vec.model")
       result = model.most_similar(text.strip(),topn=10)
       result2 = model.most_similar(text.strip(),topn=20)
       output = []
@@ -44,7 +44,7 @@ def success_doc2vec(text):
       image_num = random.randrange(1,100)
       image_name = "/static/image/"+str(image_num)+".png"
       print(image_name)
-      fig.savefig('/Users/seungeonlee/Desktop/capstone/2018-cap1-23/src/static/image/GG.png')
+      fig.savefig('/home/nlpserver/Desktop/Crawler__gy/2018-cap1-23/src/static/image/GG.png')
 
       return redirect(url_for("_html", result=text))
 
@@ -58,7 +58,15 @@ def get_text():
              user1 = request.args.get('get_text')
              return redirect(url_for('success_doc2vec',text = user1))
 
-
+@app.route('/architecture')
+def architecture():
+      return render_template("archi.html")
+@app.route('/tech')
+def tech():
+      return render_template("tech.html")
+@app.route('/main')
+def _main_home(result=""):
+      return render_template("Doc2vec.html",result=result)
 
 @app.route('/')
 @app.route('/html')
